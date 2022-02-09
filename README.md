@@ -512,7 +512,7 @@ String string = String.valueOf(a);
 
 ```java
 ArrayList<String> al = new ArrayList<String>();
-        al.add("Geeks For Geeks");
+        al.add("i am a coder");
         al.add("Friends");
 Collections.sort(al); // sort assending
 Collections.sort(al, Collections.reverseOrder()); // sort in reverse order
