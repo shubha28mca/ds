@@ -8,10 +8,14 @@
 5. [Map](#map)
 6. [Graph](#graph)
 7. [Iterator](#iterator)
-8. [Common methods](#common-methods)
-9. [Common Exceptions](#common-exceptions)
-10. [Conversions](#conversions)
-11. [Concurrency](#concurrency)
+8. [Trie](#trie)
+10. [Common methods](#common-methods)
+     
+
+ 
+11. [Common Exceptions](#common-exceptions)
+12. [Conversions](#conversions)
+13. [Concurrency](#concurrency)
 
 ## Implementation of datastructure
 ````
@@ -34,7 +38,8 @@ List <data-type> list4 = new Stack();
 ```
 
 ```java
-Iterator itr=list.iterator();  
+
+itr=list.iterator();  
 while(itr.hasNext()){  
 System.out.println(itr.next());  
 }  
@@ -449,6 +454,98 @@ It is an interface to implement walkthrow for the collection
             System.out.println(itr.next());  
         }
 ```
+	
+### Trie:
+This Data structure is just like nary tree and usualy used to store the disctionary
+
+#### Structure:
+```private class TriNode {
+        Map<Character, TriNode> children;
+        boolean endOfWord;
+        public TriNode() {
+            children = new HashMap<>();
+            endOfWord = false;
+        }
+    }
+```
+#### Creation of Root object:
+	```private final TriNode root;
+	```
+#### Insertions:
+	
+```public void insert(String s)
+    {
+        TriNode current = root;
+        for(char ch : s.toCharArray())
+        {
+            TriNode node = current.children.get(ch);
+            if(node == null)
+            {
+                node = new TriNode();
+                current.children.put(ch, node);
+            }
+            current = node;
+        }
+        current.endOfWord = true;
+    }
+```
+	
+#### Search:
+	
+```public boolean search(String word)
+    {
+        TriNode current = root;
+        for(char ch: word.toCharArray())
+        {
+            TriNode node = current.children.get(ch);
+            if(node == null)
+            {
+                return false;
+            }
+            current = node;
+        }
+
+        return current.endOfWord;
+    }
+```	
+	
+#### Deletion:
+	
+```public void delete(String word)
+    {
+        delete(root, word, 0);
+    }
+
+
+    public boolean delete(TriNode current, String word, int index)
+    {
+        if ( index == word.length())
+        {
+            // when end of the word reached only delete
+            if (!current.endOfWord)
+            {
+                return false;
+            }
+            current.endOfWord = false;
+            return current.children.size() == 0;
+        }
+        char ch = word.charAt(index);
+        TriNode node = current.children.get(ch);
+        if(node == null)
+        {
+            return false;
+        }
+        boolean shouldDeleteCurrentNode = delete(node, word, index+1);
+
+        if(shouldDeleteCurrentNode)
+        {
+            current.children.remove(ch);
+            return current.children.size() == 0;
+        }
+        return false;
+    }
+```
+	
 	
 ### Common methods:
 1. add()
