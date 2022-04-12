@@ -4,11 +4,12 @@
 1. [List](#list)
 2. [Set](#set)
 3. [Queue](#queue)
-4. [Deque](#deque-double-ended-queue)
-5. [Map](#map)
-6. [Graph](#graph)
-7. [Iterator](#iterator)
-8. [Trie](#trie)
+4. [Heap](#heap)
+5. [Deque](#deque-double-ended-queue)
+6. [Map](#map)
+7. [Graph](#graph)
+8. [Iterator](#iterator)
+9. [Trie](#trie)
 10. [Common methods](#common-methods)
      
 
@@ -110,7 +111,13 @@ Queue<String> q=new LinkedList<String>(); (FIFO)
 ```
 	
 #### ArrayDeque ( Array implementation of the queue)   
+
+### Heap:
 #### PrioriyQueue (Heap) queues with priority   
+	```
+	peek()	Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+        poll()	Retrieves and removes the head of this queue, or returns null if this queue is empty.
+	```
 ##### Max Heap (Max element in the root)  
 
 ```
