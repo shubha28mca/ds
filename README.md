@@ -1,7 +1,7 @@
 # ds
 # Java
 ## Table of Contents
-1. [List](#list)
+1. [List or stack](#list)
 2. [Set](#set)
 3. [Queue](#queue)
 4. [Heap](#heap)
@@ -57,6 +57,11 @@ System.out.println("Front:"+ s.peek());
 Iterator itr=s.iterator();  
 while(itr.hasNext()){  
 		System.out.println(itr.next());  
+}
+
+// Pop elements from the stack
+while(!s.isEmpty()) {
+    System.out.println(s.pop());
 }
 ```  
 
