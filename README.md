@@ -17,6 +17,7 @@
 11. [Common Exceptions](#common-exceptions)
 12. [Conversions](#conversions)
 13. [Concurrency](#concurrency)
+14. [Backtracking](#Backtracking)
 
 ## Implementation of datastructure
 ````
