@@ -1,3 +1,13 @@
+// Step 1: Calculate in-degree for each node (number of incoming edges).
+// Step 2: Initialize a queue and enqueue all nodes with in-degree equal to 0 (no dependencies).
+// Step 3: While the queue is not empty:
+//    - Dequeue a node and add it to the result list.
+//    - For each child (dependent node) of the current node:
+//        - Decrease its in-degree by 1.
+//        - If its in-degree becomes 0, enqueue it.
+// Step 4: After processing all nodes, check if the result list contains all nodes.
+//    - If yes, return the result (valid topological order).
+//    - If not, the graph contains a cycle and topological sorting is not possible.
 import java.util.*;
 
 public class KahnsTopologicalSort {
