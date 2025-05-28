@@ -2,44 +2,44 @@ import java.util.*;
 
 public class KahnsTopologicalSort {
 
-    // Function to perform Kahn's Topological Sort
     public static List<Integer> topologicalSort(int numVertices, List<List<Integer>> adjList) {
-        int[] inDegree = new int[numVertices];
+        Map<Integer, Integer> inDegree = new HashMap<>();
 
-        // Step 1: Compute in-degrees of all vertices
+        // Step 1: Initialize in-degree with putIfAbsent
         for (int u = 0; u < numVertices; u++) {
+            inDegree.putIfAbsent(u, 0); // ensure every node is in the map
             for (int v : adjList.get(u)) {
-                inDegree[v]++;
+                inDegree.putIfAbsent(v, 0); // ensure target node exists in map
+                inDegree.put(v, inDegree.get(v) + 1);
             }
         }
 
-        // Step 2: Add all vertices with in-degree 0 to the queue
+        // Step 2: Enqueue nodes with in-degree 0
         Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < numVertices; i++) {
-            if (inDegree[i] == 0) {
-                queue.add(i);
+        for (int node : inDegree.keySet()) {
+            if (inDegree.get(node) == 0) {
+                queue.add(node);
             }
         }
 
         List<Integer> topoOrder = new ArrayList<>();
 
-        // Step 3: Process until queue is empty
+        // Step 3: Kahn's Algorithm
         while (!queue.isEmpty()) {
             int u = queue.poll();
             topoOrder.add(u);
 
-            // Decrease in-degree of all neighbors
             for (int v : adjList.get(u)) {
-                inDegree[v]--;
-                if (inDegree[v] == 0) {
+                inDegree.put(v, inDegree.get(v) - 1);
+                if (inDegree.get(v) == 0) {
                     queue.add(v);
                 }
             }
         }
 
-        // Step 4: Check if topological sort was possible (DAG check)
-        if (topoOrder.size() != numVertices) {
-            throw new IllegalStateException("The graph contains a cycle and topological sort is not possible.");
+        // Step 4: Cycle detection
+        if (topoOrder.size() != inDegree.size()) {
+            throw new IllegalStateException("The graph contains a cycle; topological sort not possible.");
         }
 
         return topoOrder;
@@ -53,7 +53,7 @@ public class KahnsTopologicalSort {
             adjList.add(new ArrayList<>());
         }
 
-        // Example edges: directed graph
+        // Directed edges (dependency direction: B -> A if A depends on B)
         /*
         ensure that the direction of the edges goes from a dependency to its dependent. For example, 
         if A depends on B (i.e., B must be completed before A), 
