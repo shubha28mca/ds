@@ -47,6 +47,14 @@ public class UnionFindString {
 
             return true;
         }
+        
+        // Checks if two nodes are in the same connected component
+        public boolean isConnected(String x, String y) {
+            if (!parent.containsKey(x) || !parent.containsKey(y)) {
+                return false;
+            }
+            return find(x).equals(find(y));
+        }
     }
 
     public static void main(String[] args) {
@@ -67,6 +75,11 @@ public class UnionFindString {
                 System.out.println("Redundant edge found (creates cycle): " + Arrays.toString(edge));
             }
         }
+
+        // Check connectivity
+        System.out.println("\nConnectivity checks:");
+        System.out.println("Paris connected to Rome? " + uf.isConnected("Paris", "Rome")); // true
+        System.out.println("Paris connected to NYC? " + uf.isConnected("Paris", "NYC"));   // false
     }
 }
 
@@ -77,4 +90,8 @@ Processing edge: [London, Berlin]
 Processing edge: [Berlin, Rome]
 Processing edge: [Rome, Paris]
 Redundant edge found (creates cycle): [Rome, Paris]
+
+Connectivity checks:
+Paris connected to Rome? true
+Paris connected to NYC? false
 */
