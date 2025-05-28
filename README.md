@@ -780,92 +780,110 @@ solve() {
 
 
 1️⃣ List (ArrayList, LinkedList)
-Method	Description
-add(E e)	Add element to end
-add(int index, E e)	Add element at index
-get(int index)	Get element at index
-set(int index, E e)	Replace element at index
-remove(int index)	Remove element by index
-remove(Object o)	Remove first occurrence of object
-size()	Number of elements
-contains(Object o)	Check if element exists
-indexOf(Object o)	Get first index of element
-clear()	Remove all elements
+| Method                | Description                       |
+| --------------------- | --------------------------------- |
+| `add(E e)`            | Add element to end                |
+| `add(int index, E e)` | Add element at index              |
+| `get(int index)`      | Get element at index              |
+| `set(int index, E e)` | Replace element at index          |
+| `remove(int index)`   | Remove element by index           |
+| `remove(Object o)`    | Remove first occurrence of object |
+| `size()`              | Number of elements                |
+| `contains(Object o)`  | Check if element exists           |
+| `indexOf(Object o)`   | Get first index of element        |
+| `clear()`             | Remove all elements               |
+
 
 2️⃣ Set (HashSet, TreeSet, LinkedHashSet)
-Method	Description
-add(E e)	Add element (no duplicates)
-remove(Object o)	Remove element
-contains(Object o)	Check existence
-size()	Number of elements
-clear()	Remove all elements
-iterator()	Iterate over set
+| Method               | Description                 |
+| -------------------- | --------------------------- |
+| `add(E e)`           | Add element (no duplicates) |
+| `remove(Object o)`   | Remove element              |
+| `contains(Object o)` | Check existence             |
+| `size()`             | Number of elements          |
+| `clear()`            | Remove all elements         |
+| `iterator()`         | Iterate over set            |
+
 
 3️⃣ Map (HashMap, TreeMap, LinkedHashMap)
-Method	Description
-put(K key, V value)	Insert or update key-value
-get(Object key)	Get value by key
-remove(Object key)	Remove entry by key
-containsKey(Object key)	Check if key exists
-containsValue(Object val)	Check if value exists
-keySet()	Get all keys
-values()	Get all values
-entrySet()	Get all key-value pairs
-putIfAbsent(K key, V val)	Put value if key not present
-computeIfAbsent(K key, Function)	Compute and insert if absent
+| Method                             | Description                  |
+| ---------------------------------- | ---------------------------- |
+| `put(K key, V value)`              | Insert or update key-value   |
+| `get(Object key)`                  | Get value by key             |
+| `remove(Object key)`               | Remove entry by key          |
+| `containsKey(Object key)`          | Check if key exists          |
+| `containsValue(Object val)`        | Check if value exists        |
+| `keySet()`                         | Get all keys                 |
+| `values()`                         | Get all values               |
+| `entrySet()`                       | Get all key-value pairs      |
+| `putIfAbsent(K key, V val)`        | Put value if key not present |
+| `computeIfAbsent(K key, Function)` | Compute and insert if absent |
+
 
 4️⃣ Stack (java.util.Stack or Deque as stack)
-Method	Description
-push(E item)	Push element onto stack
-pop()	Remove and return top element
-peek()	Return top element without removing
-empty()	Check if stack is empty
-search(Object o)	Search for element (1-based index)
+| Method             | Description                         |
+| ------------------ | ----------------------------------- |
+| `push(E item)`     | Push element onto stack             |
+| `pop()`            | Remove and return top element       |
+| `peek()`           | Return top element without removing |
+| `empty()`          | Check if stack is empty             |
+| `search(Object o)` | Search for element (1-based index)  |
+
 
 5️⃣ Queue (LinkedList, ArrayDeque)
-Method	Description
-offer(E e)	Add element to queue
-poll()	Remove and return head
-peek()	Return head without removing
-isEmpty()	Check if queue is empty
-size()	Number of elements
+| Method       | Description                  |
+| ------------ | ---------------------------- |
+| `offer(E e)` | Add element to queue         |
+| `poll()`     | Remove and return head       |
+| `peek()`     | Return head without removing |
+| `isEmpty()`  | Check if queue is empty      |
+| `size()`     | Number of elements           |
+
 
 6️⃣ Deque (ArrayDeque, LinkedList)
-Method	Description
-addFirst(E e)	Insert at front
-addLast(E e)	Insert at end
-removeFirst()	Remove and return front
-removeLast()	Remove and return end
-peekFirst()	Get front without removing
-peekLast()	Get end without removing
-offerFirst(E e)	Insert at front (returns boolean)
-offerLast(E e)	Insert at end (returns boolean)
+| Method            | Description                       |
+| ----------------- | --------------------------------- |
+| `addFirst(E e)`   | Insert at front                   |
+| `addLast(E e)`    | Insert at end                     |
+| `removeFirst()`   | Remove and return front           |
+| `removeLast()`    | Remove and return end             |
+| `peekFirst()`     | Get front without removing        |
+| `peekLast()`      | Get end without removing          |
+| `offerFirst(E e)` | Insert at front (returns boolean) |
+| `offerLast(E e)`  | Insert at end (returns boolean)   |
+
 
 7️⃣ PriorityQueue
-Method	Description
-offer(E e)	Insert element
-peek()	Get min element without removing
-poll()	Remove and return min element
-remove(Object o)	Remove specific element
-size()	Number of elements
+| Method             | Description                      |
+| ------------------ | -------------------------------- |
+| `offer(E e)`       | Insert element                   |
+| `peek()`           | Get min element without removing |
+| `poll()`           | Remove and return min element    |
+| `remove(Object o)` | Remove specific element          |
+| `size()`           | Number of elements               |
+
 
 8️⃣ Arrays Utility (java.util.Arrays)
-Method	Description
-sort(array)	Sort array
-binarySearch(array, key)	Binary search
-copyOf(array, length)	Copy array to new length
-fill(array, value)	Fill array with value
-equals(array1, array2)	Compare arrays
-toString(array)	Convert array to string
+| Method                     | Description              |
+| -------------------------- | ------------------------ |
+| `sort(array)`              | Sort array               |
+| `binarySearch(array, key)` | Binary search            |
+| `copyOf(array, length)`    | Copy array to new length |
+| `fill(array, value)`       | Fill array with value    |
+| `equals(array1, array2)`   | Compare arrays           |
+| `toString(array)`          | Convert array to string  |
+
 
 9️⃣ StringBuilder
-Method	Description
-append(String s)	Append string
-insert(int pos, String s)	Insert string at position
-delete(int start, int end)	Delete substring
-replace(int start, int end, String s)	Replace substring
-toString()	Convert to String
-reverse()	Reverse the sequence
+| Method                                  | Description               |
+| --------------------------------------- | ------------------------- |
+| `append(String s)`                      | Append string             |
+| `insert(int pos, String s)`             | Insert string at position |
+| `delete(int start, int end)`            | Delete substring          |
+| `replace(int start, int end, String s)` | Replace substring         |
+| `toString()`                            | Convert to String         |
+| `reverse()`                             | Reverse the sequence      |
+
 
 Bonus: Common Useful Methods for Collections
 Collections.sort(list) — sort a list
