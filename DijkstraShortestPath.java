@@ -37,6 +37,12 @@ public class DijkstraShortestPath {
         Map<Integer, Integer> dist = new HashMap<>();
         PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
 
+        for(int node: adjList.keySet())
+        {
+            dist.putIfAbsent(node, Integer.MAX_VALUE);
+        }
+                
+
         pq.offer(new int[]{source, 0});
         dist.put(source, 0);
 
