@@ -26,10 +26,10 @@ import java.util.*;
 ````
 
 ### List: 
-ArrayList (dynamic resizing array)  
-LinkedList ( implementation of doubly linked list)  
-Vector ( dynamic size array) ( legacy class) thread safe class ( Not to using this in a single threaded environment)  
-Stack (legacy class, inheri from vector class) thread safe class ( Not to using this in a single threaded environment)  
+**ArrayList** (dynamic resizing array)  
+**LinkedList** (implementation of doubly linked list)  
+**Vector** (dynamic size array) ( legacy class) thread safe class (Not to using this in a single threaded environment)  
+**Stack** (legacy class, inherit from vector class) thread safe class (Not to using this in a single threaded environment)  
 
 #### Implementation
 ```java
