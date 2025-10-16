@@ -67,9 +67,9 @@ while(!s.isEmpty()) {
 ```  
 
 ### Set:
-HashSet ( quickly inset delete, search the keys in a set, using hashing to store the keys) no ordering of the data.  
+**HashSet** ( quickly inset delete, search the keys in a set, using hashing to store the keys) **no ordering of the data**.  
 Set<String> ts = new HashSet<>();  
-TreeSet ( stores the keys and use self balancing binary search tree for string the keys) (Stored and Fetched in Shorted Order)  
+**TreeSet** ( stores the keys and use self balancing binary search tree for string the keys) **(Stored and Fetched in Shorted Order)**  
   
 	
 ```java
